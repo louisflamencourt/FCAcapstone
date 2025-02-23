@@ -72,7 +72,12 @@
       "mark": {"type": "line"},
       "encoding": {
         "x": {"field": "Year", "type": "temporal", "title": ""},
-        "y": {"field": "Value", "type": "quantitative", "title": ""},
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": "",
+          "scale": {"domain": [60, 190]}  // Change the domain values as needed
+        },
         "color": {"value": "#9A2760"}
       }
     },
@@ -87,7 +92,7 @@
       "encoding": {
         "x": {"field": "Year", "type": "temporal"},
         "y": {"field": "Value", "type": "quantitative"},
-        "color": {"value": "#9A2760"},
+        "color": {"value": "#9A2760"}
       },
       "transform": [
         {"filter": "datum.Year == 852076800000 || datum.Year == 1546300800000 || datum.Year == 1672531200000"}
