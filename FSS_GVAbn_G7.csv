@@ -1,0 +1,203 @@
+Country,Year,Value
+Japan,2008,190.96289
+Japan,2009,181.13052
+Japan,2010,178.84562
+Japan,2011,170.26666
+Japan,2012,163.98501
+Japan,2013,169.53228
+Japan,2014,166.31444
+Japan,2015,167.91679
+Japan,2016,162.51917
+Japan,2017,163.0236
+Japan,2018,165.99689
+Japan,2019,164.93474
+Japan,2020,165.63554
+Japan,2021,171.0901
+Japan,2022,184.54035
+Japan,2023,209.33115
+Japan,1998,197.7059
+Japan,1999,193.71061
+Japan,2000,195.55167
+Japan,2001,212.98918
+Japan,2002,228.80828
+Japan,2003,236.69009
+Japan,2004,234.31832
+Japan,2005,236.2134
+Japan,2006,229.32585
+Japan,2007,229.17839
+Japan,1994,198.97391
+Japan,1995,193.30765
+Japan,1996,205.8892
+Japan,1997,207.8967
+United States,2011,1013.78
+United States,2012,1152.42
+United States,2013,1134.15
+United States,2014,1264.14
+United States,2015,1347.39
+United States,2016,1436.58
+United States,2017,1483.52
+United States,2018,1582.65
+United States,2019,1681.64
+United States,2020,1745.67
+United States,2021,1923.27
+United States,2001,788.17
+United States,2002,797.67
+United States,2003,831.01
+United States,2004,860.47
+United States,2005,963.63
+United States,2006,1031.75
+United States,2007,1022.64
+United States,2008,868.1
+United States,2009,962.75
+United States,2010,987.93
+United States,1997,566.5
+United States,1998,626.66
+United States,1999,662.99
+United States,2000,732.72
+Italy,2009,81.29
+Italy,2010,84.414
+Italy,2011,87.197
+Italy,2012,86.702
+Italy,2013,90.112
+Italy,2014,94.677
+Italy,2015,93.269
+Italy,2016,90.629
+Italy,2017,87.571
+Italy,2018,87.769
+Italy,2019,88.253
+Italy,2020,89.683
+Italy,2021,85.382
+Italy,2022,98.868
+Italy,2023,121.011
+Italy,1999,55.847
+Italy,2000,61.523
+Italy,2001,66.55
+Italy,2002,64.658
+Italy,2003,71.698
+Italy,2004,72.413
+Italy,2005,77.693
+Italy,2006,80.641
+Italy,2007,90.519
+Italy,2008,89.364
+Italy,1995,46.31
+Italy,1996,48.785
+Italy,1997,46.761
+Italy,1998,53.119
+Germany,2009,121.814
+Germany,2010,126.874
+Germany,2011,130.724
+Germany,2012,134.068
+Germany,2013,131.197
+Germany,2014,132.143
+Germany,2015,137.368
+Germany,2016,134.53
+Germany,2017,133.408
+Germany,2018,132.451
+Germany,2019,138.556
+Germany,2020,141.196
+Germany,2021,153.34
+Germany,2022,146.531
+Germany,2023,156.684
+Germany,1999,104.39
+Germany,2000,89.232
+Germany,2001,91.542
+Germany,2002,99.803
+Germany,2003,111.287
+Germany,2004,125.642
+Germany,2005,123.222
+Germany,2006,122.947
+Germany,2007,116.446
+Germany,2008,107.987
+Germany,1995,85.459
+Germany,1996,90.222
+Germany,1997,93.214
+Germany,1998,90.288
+United Kingdom,2009,177.905
+United Kingdom,2010,180.804
+United Kingdom,2011,179.023
+United Kingdom,2012,178.087
+United Kingdom,2013,183.898
+United Kingdom,2014,189.904
+United Kingdom,2015,182.052
+United Kingdom,2016,198.887
+United Kingdom,2017,214.383
+United Kingdom,2018,211.939
+United Kingdom,2019,212.563
+United Kingdom,2020,216.606
+United Kingdom,2021,239.941
+United Kingdom,2022,260.39
+United Kingdom,1999,82.901
+United Kingdom,2000,84.916
+United Kingdom,2001,86.684
+United Kingdom,2002,91.364
+United Kingdom,2003,99.905
+United Kingdom,2004,114.725
+United Kingdom,2005,132.301
+United Kingdom,2006,148.551
+United Kingdom,2007,162.188
+United Kingdom,2008,156.338
+United Kingdom,1995,75.608
+United Kingdom,1996,77.805
+United Kingdom,1997,79.82
+United Kingdom,1998,81.692
+Canada,2021,128.37
+Canada,2011,87.855
+Canada,2012,87.2625
+Canada,2013,92.4675
+Canada,2014,98.5875
+Canada,2015,103.3125
+Canada,2016,102.93
+Canada,2017,108.075
+Canada,2018,110.3325
+Canada,2019,113.9625
+Canada,2020,115.8675
+Canada,2007,81.15
+Canada,2008,83.565
+Canada,2009,78.7125
+Canada,2010,83.205
+France,2013,88.957
+France,2014,91.278
+France,2015,91.894
+France,2016,89.771
+France,2017,82.808
+France,2018,89.166
+France,2019,86.185
+France,2020,87.802
+France,2021,93.731
+France,2022,96.558
+France,2023,79.574
+France,1992,47.762
+France,1993,51.282
+France,1994,50.644
+France,1995,46.442
+France,1996,47.289
+France,1997,46.783
+France,1998,46.805
+France,1999,50.644
+France,2000,57.596
+France,2001,53.779
+France,2002,55.583
+France,2003,55.792
+France,2004,60.94
+France,2005,64.251
+France,2006,68.266
+France,2007,72.083
+France,2008,69.025
+France,2009,73.326
+France,2010,86.658
+France,2011,84.073
+France,2012,83.82
+France,1982,22.803
+France,1983,27.555
+France,1984,31.504
+France,1985,34.694
+France,1986,37.07
+France,1987,38.819
+France,1988,42.207
+France,1989,48.477
+France,1990,46.805
+France,1991,47.762
+France,1978,12.034
+France,1979,13.893
+France,1980,16.676
+France,1981,19.58
