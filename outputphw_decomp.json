@@ -9,7 +9,7 @@
     "fontSize": 14,
     "subtitleFontSize": 12,
     "subtitlePadding": 4,
-    "offset": 0
+    "offset": 10
   },
   "width": 450,
   "height": 300,
@@ -79,7 +79,15 @@
           "sort": {"field": "value", "order": "ascending"}
         },
         "x": {"field": "value", "type": "quantitative", "stack": "zero", "title": ""},
-        "color": {"field": "variable", "type": "nominal", "scale": {"range": ["#28536B", "#93B7BE"]}}
+        "color": {
+          "field": "label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["GVA", "Hours worked (sign reversed)", "Output per hour worked"],
+            "range": ["#28536B", "#93B7BE", "#9A2760"]
+          },
+          "legend": {"title": "Metric"}
+        }
       }
     },
     {
@@ -92,13 +100,28 @@
           "sort": {"field": "value", "order": "ascending"}
         },
         "x": {"field": "Output per hour worked", "type": "quantitative", "title": ""},
-        "color": {"value": "#9A2760"},
+        "color": {
+          "datum": "Output per hour worked",
+          "type": "nominal",
+          "scale": {
+            "domain": ["GVA", "Hours worked (sign reversed)", "Output per hour worked"],
+            "range": ["#28536B", "#93B7BE", "#9A2760"]
+          },
+          "legend": {"title": "Metric"}
+        },
         "shape": {"value": "circle"}
       }
     }
   ],
   "transform": [
-    {"fold": ["GVA", "Hours worked (sign reversed)"], "as": ["variable", "value"]}
+    {
+      "fold": ["GVA", "Hours worked (sign reversed)"],
+      "as": ["variable", "value"]
+    },
+    {
+      "calculate": "datum.variable", 
+      "as": "label"
+    }
   ],
   "data": {
     "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/outputphw_decomp.csv",
