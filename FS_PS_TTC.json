@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Total Tax Contribution of the Financial and Related Professional Services Industry, 2016-2023",
-    "subtitle": ["Total tax contributions (TTC) (in £bn)"],
+    "subtitle": ["total tax contributions (TTC) in £bn"],
     "color": "#122b39E6",
     "subtitleColor": "#676A86",
     "anchor": "start",
@@ -101,23 +101,27 @@
         "color": {
           "field": "category",
           "type": "nominal",
-          "scale": {"range": ["#1f77b4", "#b22222"]}
+          "scale": {"range": ["#9A2760", "#93B7BE "]}
         }
       }
     },
     {
-      "mark": {"type": "text", "align": "center", "baseline": "middle", "dy": -5, "color": "white"},
+      "mark": {
+        "type": "text", 
+        "align": "center", 
+        "baseline": "middle", 
+        "text": {"expr": "'£'+datum.value+' bn'"},
+        "dy": 20, "color": "white"},
       "encoding": {
         "x": {"field": "year", "type": "ordinal"},
         "y": {"field": "value", "type": "quantitative"},
-        "text": {"field": "value", "type": "quantitative", "format": ".1f"}
       }
     },
     {
       "transform": [
         {"fold": ["FS/PS"], "as": ["category", "value"]}
       ],
-      "mark": {"type": "line", "color": "#ff7f0e", "point": true},
+      "mark": {"type": "line", "color": "black", "point": true},
       "encoding": {
         "x": {"field": "year", "type": "ordinal"},
         "y": {
@@ -131,6 +135,24 @@
           },
           "scale": {"domain": [0, 15]}
         }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -5,
+        "color": "black"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "value",
+          "type": "quantitative"
+        },
+        "text": {"aggregate": "sum", "field": "value", "type": "quantitative", "format": ""}
       }
     }
   ]
