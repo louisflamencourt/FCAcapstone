@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Financial and insurance activities GVA - UK vs G7 (excl. US)",
+    "subtitle": ["in USD (billions)"],
+    "color": "#122b39E6",
+    "subtitleColor": "#676A86",
+    "anchor": "start",
+    "dx": 24,
+    "fontSize": 14,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 4,
+    "offset": 0
+  },
+  "width": 450,
+  "height": 300,
+  "config": {
+    "font": "Times New Roman",
+    "mark": {"line": {"interpolate": "linear"}},
+    "view": {"stroke": "transparent", "width": 400, "height": 300},
+    "range": {
+      "category": [
+        "#9A2760",
+        "#90E0EF",
+        "#48CAE4",
+        "#00B4D8",
+        "#0096C7",
+        "#0077B6",
+        "#023E8A"
+      ]
+    },
+    "axisX": {
+      "labelColor": "#122b39",
+      "tickColor": "#122b39",
+      "domainColor": "#122b39",
+      "domainOpacity": 0.5,
+      "gridOpacity": 0,
+      "labelFont": "Times New Roman",
+      "labelAngle": 0,
+      "labelAlign": "center",
+      "labelFontSize": 11,
+      "labelPadding": 5,
+      "tickCount": 10,
+      "tickSize": 0,
+      "title": ""
+    },
+    "axisY": {
+      "labelColor": "#122b39",
+      "labelFont": "Times New Roman",
+      "tickColor": "#122b39",
+      "domainColor": "#122b39",
+      "gridColor": "#122b39",
+      "gridDash": [1, 5],
+      "gridOpacity": 0.5,
+      "labelPadding": 5,
+      "labelFontSize": 11,
+      "domainOpacity": 0.5,
+      "tickSize": 0,
+      "title": null,
+      "titleAlign": "left",
+      "titleAngle": 0,
+      "titleBaseline": "bottom",
+      "titleColor": "#122b39",
+      "titleOpacity": 0.9,
+      "titleX": 0,
+      "titleY": -7,
+      "labelExpr": "'$'+datum.value+' bn'"
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "line"},
+      "encoding": {
+        "color": {
+          "field": "Country",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "United Kingdom",
+              "France",
+              "Italy",
+              "Germany",
+              "Japan",
+              "Canada"
+            ],
+            "range": [
+              "#9A2760",
+              "#90E0EF",
+              "#48CAE4",
+              "#00B4D8",
+              "#0096C7",
+              "#0077B6",
+              "#023E8A"
+            ]
+          },
+          "type": "nominal"
+        },
+        "size": {
+          "condition": {"test": "(datum.Country === 'United Kingdom')", "value": 2},
+          "value": 1.5
+        },
+        "strokeDash": {
+          "condition": {"test": "(datum.Country === 'United Kingdom')", "value": [0, 0]},
+          "value": [5, 2]
+        },
+        "x": {"field": "Year", "title": "", "type": "temporal"},
+        "y": {
+          "field": "Value",
+          "title": "",
+          "type": "quantitative",
+          "scale": {"domain": [0, 300]}
+        }
+      },
+      "transform": [
+        {"filter": "datum.Country != 'United States'"},
+        {"filter": "year(datum.Year) >= 1995"}
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": {
+          "expr": "{\"Italy\": -30, \"United States\": 0, \"Canada\":-5, \"United Kingdom\": -30, \"France\": 10, \"Japan\": -35, \"Germany\": -8}[datum.Country]"
+        }
+      },
+      "transform": [
+        {"filter": "year(datum.Year) == 2021"},
+        {"filter": "datum.Country != 'United States'"}
+      ],
+      "encoding": {
+        "color": {
+          "field": "Country",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "United Kingdom",
+              "France",
+              "Italy",
+              "Germany",
+              "Japan",
+              "Canada"
+            ],
+            "range": [
+              "#9A2760",
+              "#90E0EF",
+              "#48CAE4",
+              "#00B4D8",
+              "#0096C7",
+              "#0077B6",
+              "#023E8A"
+            ]
+          },
+          "type": "nominal"
+        },
+        "size": {
+          "condition": {"test": "(datum.Country === 'United Kingdom')", "value": 14},
+          "value": 12
+        },
+        "text": {"field": "Country", "type": "nominal"},
+        "x": {"value": 450},
+        "y": {
+          "field": "Value",
+          "title": "",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "text": {"expr": "'$'+format(datum.Value, '.2f') + ' bn'"},
+        "dx": 25,
+        "dy": {
+          "expr": "{\"Italy\": 0, \"Canada\": 0, \"United Kingdom\": 5, \"France\": 0, \"Japan\": 0, \"Germany\": 0, \"United States\": 0}[datum.Country]"
+        }
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Value", "type": "quantitative"},
+        "color": {"field": "Country", "type": "nominal"}
+      },
+      "transform": [
+        {"filter": "datum.Year == 1640995200000 && datum.Country == 'United Kingdom'"},
+        {"filter": "datum.Country != 'United States'"}
+      ]
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/FSS_GVAbn_G7.csv",
+    "format": {
+      "type": "csv"
+    }
+  }
+}
