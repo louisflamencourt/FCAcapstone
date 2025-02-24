@@ -48,23 +48,32 @@
       {"Year": "2023/24", "Category": "Income tax", "Percentage": 10.2}
     ]
   },
-  "mark": "bar",
-  "encoding": {
-    "x": {"field": "Year", "type": "nominal", "title": ""},
-    "y": {"field": "Percentage", "type": "quantitative", "title": ""},
-    "color": {"field": "Category", "type": "nominal", "title": "Tax category"},
-    "tooltip": [{"field": "Year"}, {"field": "Category"}, {"field": "Percentage"}]
-  },
   "layer": [
     {
       "mark": "bar",
       "encoding": {
         "x": {"field": "Year", "type": "nominal", "title": ""},
-        "y": {"field": "Percentage", "type": "quantitative", "title": ""},
+        "y": {"field": "Percentage", "type": "quantitative", "title": "", "stack": "zero"},
         "color": {"field": "Category", "type": "nominal", "title": "Tax category"},
+        "order": {"field": "Category", "type": "nominal"},
         "tooltip": [{"field": "Year"}, {"field": "Category"}, {"field": "Percentage"}]
       }
     },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "dy": 0,
+        "color": "white"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "nominal"},
+        "y": {"field": "Percentage", "type": "quantitative", "stack": "zero"},
+        "text": {"field": "Percentage", "type": "quantitative"},
+        "order": {"field": "Category", "type": "nominal"}
+      }
+    }
   ],
   "config": {
     "font": "Times New Roman",
