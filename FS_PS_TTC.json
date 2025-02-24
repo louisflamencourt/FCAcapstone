@@ -90,7 +90,7 @@
         {
           "mark": {
             "type": "text",
-            "text": {"expr": "'£'+format(datum.total, '.0f')+'bn'"},
+            "text": {"expr": "'£'+format(datum.total, '.0f')+' bn'"},
             "dy": -6
           },
           "transform": [
@@ -115,7 +115,7 @@
                 "y": {
                   "field": "value",
                   "type": "quantitative",
-                  "title": "Total tax contributions",
+                  "title": "Total tax contributions (in £bn)",
                   "axis": {
                     "grid": false,
                     "orient": "left",
@@ -124,7 +124,7 @@
                     "titleX": 0,
                     "titleY": -10,
                     "titleAnchor": "start",
-                    "labelExpr": "datum.value+'%'"
+                    "labelExpr": "'£'+datum.value+' bn'"
                   },
                   "stack": "zero",
                   "scale": {"domain": [0, 120]}
@@ -162,15 +162,19 @@
           "field": "FS/PS",
           "type": "quantitative",
           "axis": {
-            "title": "FS/PS",
+            "title": "FS/PS share of gov receipts (in %)",
             "grid": false,
             "domainColor": "rgb(50, 90, 200)",
             "labelColor": "rgb(50, 90, 200)",
             "titleColor": "rgb(50, 90, 200)",
-            "labelExpr": "datum.label+'%'",
-            "orient": "right"
+            "labelExpr": "datum.value+'%'",
+            "orient": "right",
+            "titleAngle": 0,
+            "titleX": -140,
+            "titleY": -10,
+            "titleAnchor": "start"
           },
-          "scale": {"domain": [10, 16]}
+          "scale": {"domain": [10, 15]}
         }
       }
     }
