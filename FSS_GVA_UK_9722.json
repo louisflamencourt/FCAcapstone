@@ -100,7 +100,7 @@
               },
               "scale": {
               "type": "sqrt",
-              "scheme": "yellowgreenblue"}
+              "scheme": "purplebluegreen"}
             },
             "tooltip": [
               {"field": "properties.ITL121NM", "type": "nominal", "title": "Region"},
@@ -223,7 +223,7 @@
             "color": {
               "field": "GVA_2022",
               "type": "quantitative",
-              "scale": {"scheme": "yellowgreenblue"}
+              "scale": {"scheme": "purplebluegreen"}
             },
             "tooltip": [
               {"field": "properties.ITL121NM", "type": "nominal", "title": "Region"},
