@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "GVA by sector in 2022 - UK",
-    "subtitle": ["in bn GBP at basic prices (£ bn)"],
+    "subtitle": ["in GBP billions at basic prices (£ bn)"],
     "color": "#122b39E6",
     "subtitleColor": "#676A86",
     "anchor": "start",
