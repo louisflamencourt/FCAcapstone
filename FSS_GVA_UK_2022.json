@@ -95,7 +95,7 @@
       },
       "scale": {
         "type": "sqrt",
-        "scheme": "yellowgreenblue"
+        "scheme": "purplebluegreen"
       }
     },
     "tooltip": [
