@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "GVA, hours worked, and output per hour worked growth by industry",
-    "subtitle": ["growth from 2024Q2 to 2023Q2 (in %)"],
+    "subtitle": ["growth from 2023Q2 to 2024Q2 (in %)"],
     "color": "#122b39E6",
     "anchor": "start",
     "dx": 24,
