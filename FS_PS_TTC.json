@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Total Tax Contribution of the Financial and Related Professional Services Industry, 2016-2023",
-    "subtitle": ["total tax contributions (TTC) in £bn"],
+    "subtitle": ["Total tax contributions (TTC) in £bn"],
     "color": "#122b39E6",
     "subtitleColor": "#676A86",
     "anchor": "start",
@@ -46,114 +46,134 @@
       "tickCount": 10,
       "tickSize": 0,
       "title": ""
-    },
-    "axisY": {
-      "labelColor": "#122b39",
-      "labelFont": "Times New Roman",
-      "tickColor": "#122b39",
-      "domainColor": "#122b39",
-      "gridColor": "#122b39",
-      "gridDash": [1, 5],
-      "gridOpacity": 0.5,
-      "labelPadding": 5,
-      "labelFontSize": 11,
-      "domainOpacity": 0.5,
-      "tickSize": 0,
-      "titleAlign": "left",
-      "titleAngle": 0,
-      "titleBaseline": "bottom",
-      "titleColor": "#122b39",
-      "titleOpacity": 0.9,
-      "titleX": 0,
-      "titleY": -7,
-      "labelExpr": "'£'+datum.value+'bn'"
     }
   },
   "data": {
     "values": [
-      {"year": 2016, "Financial services TTC": 71.4, "Professional services TTC": 15.5, "FS/PS": 14.6},
-      {"year": 2018, "Financial services TTC": 75.0, "Professional services TTC": 19.1, "FS/PS": 14.3},
-      {"year": 2020, "Financial services TTC": 75.6, "Professional services TTC": 20.5, "FS/PS": 13.4},
-      {"year": 2023, "Financial services TTC": 79.3, "Professional services TTC": 30.9, "FS/PS": 12.3}
+      {
+        "year": 2016,
+        "Financial services TTC": 71.4,
+        "Professional services TTC": 15.5,
+        "FS/PS": 14.6
+      },
+      {
+        "year": 2018,
+        "Financial services TTC": 75,
+        "Professional services TTC": 19.1,
+        "FS/PS": 14.3
+      },
+      {
+        "year": 2020,
+        "Financial services TTC": 75.6,
+        "Professional services TTC": 20.5,
+        "FS/PS": 13.4
+      },
+      {
+        "year": 2023,
+        "Financial services TTC": 79.3,
+        "Professional services TTC": 30.9,
+        "FS/PS": 12.3
+      }
     ]
   },
-  "transform": [
-    {"fold": ["Financial services TTC", "Professional services TTC"], "as": ["category", "value"]}
-  ],
   "layer": [
     {
-      "mark": {"type": "bar"},
       "encoding": {
-        "x": {"field": "year", "type": "ordinal", "title": ""},
-        "y": {
-          "field": "value",
-          "type": "quantitative",
-          "title": "",
-          "axis": {
-            "title": "TTC",
-            "grid": false,
-            "orient": "left",
-            "titleColor": "black"
-          },
-          "stack": "zero",
-          "scale": {"domain": [0, 120]}
-        },
-        "color": {
-          "field": "category",
-          "type": "nominal",
-          "scale": {"range": ["#9A2760", "#93B7BE "]}
+        "x": {
+          "field": "year",
+          "scale": {"padding": 0.1},
+          "type": "ordinal",
+          "title": ""
         }
-      }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "text": {"expr": "'£'+format(datum.total, '.0f')+'bn'"},
+            "dy": -6
+          },
+          "transform": [
+            {
+              "calculate": "datum['Financial services TTC'] + datum['Professional services TTC']",
+              "as": "total"
+            }
+          ],
+          "encoding": {"y": {"field": "total", "type": "quantitative"}}
+        },
+        {
+          "transform": [
+            {
+              "fold": ["Financial services TTC", "Professional services TTC"],
+              "as": ["category", "value"]
+            }
+          ],
+          "layer": [
+            {
+              "mark": {"type": "bar", "opacity": 1},
+              "encoding": {
+                "y": {
+                  "field": "value",
+                  "type": "quantitative",
+                  "title": "Total tax contributions",
+                  "axis": {
+                    "grid": false,
+                    "orient": "left",
+                    "titleColor": "black",
+                    "titleAngle": 0,
+                    "titleX": 0,
+                    "titleY": -10,
+                    "titleAnchor": "start",
+                    "labelExpr": "datum.value+'%'"
+                  },
+                  "stack": "zero",
+                  "scale": {"domain": [0, 120]}
+                },
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {"range": ["#9A2760", "#93B7BE"]}
+                }
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "dy": 20,
+                "color": "white",
+                "text": {"expr": "'£'+datum.value+' bn'"}
+              },
+              "encoding": {
+                "x": {"field": "year", "type": "ordinal"},
+                "y": {"field": "value", "type": "quantitative"}
+              }
+            }
+          ]
+        }
+      ]
     },
     {
-      "mark": {
-        "type": "text", 
-        "align": "center", 
-        "baseline": "middle", 
-        "text": {"expr": "'£'+datum.value+' bn'"},
-        "dy": 20, "color": "white"},
-      "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
-        "y": {"field": "value", "type": "quantitative"},
-      }
-    },
-    {
-      "transform": [
-        {"fold": ["FS/PS"], "as": ["category", "value"]}
-      ],
-      "mark": {"type": "line", "color": "black", "point": true},
+      "mark": {"type": "line", "color": "rgb(50, 90, 200)", "point": true},
       "encoding": {
         "x": {"field": "year", "type": "ordinal"},
         "y": {
-          "field": "value",
+          "field": "FS/PS",
           "type": "quantitative",
           "axis": {
             "title": "FS/PS",
             "grid": false,
-            "orient": "right",
-            "titleColor": "black"
+            "domainColor": "rgb(50, 90, 200)",
+            "labelColor": "rgb(50, 90, 200)",
+            "titleColor": "rgb(50, 90, 200)",
+            "labelExpr": "datum.label+'%'",
+            "orient": "right"
           },
-          "scale": {"domain": [0, 15]}
+          "scale": {"domain": [10, 16]}
         }
       }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -5,
-        "color": "black"
-      },
-      "encoding": {
-        "x": {"field": "year", "type": "ordinal"},
-        "y": {
-          "aggregate": "sum",
-          "field": "value",
-          "type": "quantitative"
-        },
-        "text": {"aggregate": "sum", "field": "value", "type": "quantitative", "format": ""}
-      }
     }
-  ]
+  ],
+  "resolve": {"scale": {"y": "independent"}}
 }
