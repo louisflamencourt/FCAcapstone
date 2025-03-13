@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "",
+    "color": "black",
+    "anchor": "start",
+    "dx": 24,
+    "fontSize": 14
+  },
+  "config": {
+    "font": "Times New Roman",
+    "view": {
+      "stroke": "transparent",
+      "continuousWidth": 400,
+      "continuousHeight": 300
+    },
+    "range": {"category": ["#701B45"]}
+  },
+  "data": {
+    "values": [
+      {"quartile": "Q1", "value": 2.545995},
+      {"quartile": "Q2", "value": 2.604772},
+      {"quartile": "Q3", "value": 2.914959},
+      {"quartile": "Q4", "value": 1.879433}
+    ]
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "quartile",
+          "type": "ordinal",
+          "axis": {"labelAngle": 0, "title": null, "labelFontSize": 16}
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {"domain": [0, 3]},
+          "axis": {
+            "title": null,
+            "grid": true,
+            "labelFontSize": 16,
+            "tickCount": 5
+          }
+        },
+        "color": {"field": "quartile", "type": "nominal", "legend": null}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -10, "fontSize": 16},
+      "encoding": {
+        "x": {"field": "quartile", "type": "ordinal"},
+        "y": {"field": "value", "type": "quantitative"},
+        "text": {"field": "value", "type": "quantitative", "format": ".2f"}
+      }
+    }
+  ],
+  "height": 400,
+  "width": 400
+}
