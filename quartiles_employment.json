@@ -41,18 +41,18 @@
             "title": null,
             "grid": true,
             "labelFontSize": 16,
-            "tickCount": 5
+            "tickCount": 5,
+            "labelExpr": "datum.value + ' %'"
           }
         },
         "color": {"field": "quartile", "type": "nominal", "legend": null}
       }
     },
     {
-      "mark": {"type": "text", "dy": -10, "fontSize": 16},
+      "mark": {"type": "text", "dy": -10, "fontSize": 16, "text": {"expr": "format(abs(datum.value), '.1f')+' %'"}},
       "encoding": {
         "x": {"field": "quartile", "type": "ordinal"},
         "y": {"field": "value", "type": "quantitative"},
-        "text": {"field": "value", "type": "quantitative", "format": ".2f"}
       }
     }
   ],
