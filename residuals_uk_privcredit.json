@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "",
+    "color": "black",
+    "anchor": "start",
+    "dx": 24,
+    "fontSize": 14
+  },
+  "config": {
+    "font": "Times New Roman",
+    "view": {
+      "stroke": "transparent",
+      "continuousWidth": 400,
+      "continuousHeight": 300
+    },
+    "range": {"category": ["#701B45"]}
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/residuals_UK.csv"
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "axis": {"labelAngle": 0, "title": null, "labelFontSize": 16}
+        },
+        "y": {
+          "field": "resid_y",
+          "type": "quantitative",
+          "scale": {"domain": [-3, 3]},
+          "axis": {
+            "title": null,
+            "grid": true,
+            "labelFontSize": 16,
+            "tickCount": 5,
+            "labelExpr": "datum.value + ' %'"
+          }
+        },
+        "color": {"field": "year", "type": "nominal", "legend": null}
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -10, "fontSize": 16, "text": {"expr": "format(abs(datum.resid_y), '.1f')+' %'"}},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "resid_y", "type": "quantitative"},
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "rgb(50, 90, 200)", "point": true},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "resid_x1",
+          "type": "quantitative",
+          "axis": {
+            "title": "resid_x1",
+            "grid": false,
+            "domainColor": "rgb(50, 90, 200)",
+            "labelColor": "rgb(50, 90, 200)",
+            "titleColor": "rgb(50, 90, 200)",
+            "labelExpr": "datum.value+'%'",
+            "orient": "right",
+            "titleAngle": 0,
+            "titleX": -10,
+            "titleY": -10,
+            "titleAnchor": "start"
+          },
+          "scale": {"domain": [-100, 100]}
+        }
+      }
+    }
+  ],
+  "height": 400,
+  "width": 700,
+  "resolve": {"scale": {"y": "independent"}}
+}
