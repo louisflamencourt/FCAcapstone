@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "",
+    "color": "black",
+    "anchor": "start",
+    "dx": 24,
+    "fontSize": 14
+  },
+  "config": {
+    "font": "Times New Roman",
+    "view": {
+      "stroke": "transparent",
+      "continuousWidth": 400,
+      "continuousHeight": 300
+    },
+    "range": {"category": ["#701B45"]}
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/residuals_UK.csv"
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "resid_x1",
+          "type": "ordinal",
+          "axis": {
+            "labelAngle": 0, 
+            "title": "Private credit by banks to GDP (residuals)", 
+            "labelFontSize": 16,
+            "titleFontSize": 16,
+            "labelExpr": "format(datum.value, '.1f')"
+          }
+        },
+        "y": {
+          "field": "resid_y",
+          "type": "quantitative",
+          "scale": {"domain": [-3, 3]},
+          "axis": {
+            "title": "GDP per worker growth (residuals)",
+            "grid": true,
+            "labelFontSize": 16,
+            "titleFontSize": 16,
+            "tickCount": 5,
+            "labelExpr": "datum.value + ' %'"
+          }
+        },
+        "color": {"field": "resid_x1", "type": "nominal", "legend": null}
+      }
+    },
+    {
+      "mark": {
+        "type": "text", 
+        "dy": {"expr": "datum.resid_y > 0 ? -10 : 10"},
+        "fontSize": 16, 
+        "text": {"expr": "'('+datum.year+')'"}},
+      "encoding": {
+        "x": {"field": "resid_x1", "type": "ordinal"},
+        "y": {"field": "resid_y", "type": "quantitative"},
+      }
+    }
+  ],
+  "height": 400,
+  "width": 650
+}
