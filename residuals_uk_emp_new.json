@@ -56,7 +56,7 @@
       "mark": {
         "type": "text",
         "dy": {"expr": "datum.resid_y > 0 ? -10 : 10"},
-        "fontSize": 14,
+        "fontSize": 16,
         "text": {"expr": "datum.year"}
       },
       "encoding": {
