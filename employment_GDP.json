@@ -36,13 +36,13 @@
         "x": {
           "field": "resid_x2",
           "type": "quantitative",
-          "title": "Financial share in total employment (five-year averaged residuals)",
+          "title": "Financial share in total employment (residuals)",
           "axis": {"labelFontSize": 14, "titleFontSize": 14}
         },
         "y": {
           "field": "resid_y",
           "type": "quantitative",
-          "title": "GDP per worker growth (five-year averaged residuals)",
+          "title": "GDP per worker growth (residuals)",
           "axis": {"labelFontSize": 14, "titleFontSize": 14}
         },
         "color": {
