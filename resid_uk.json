@@ -1,0 +1,137 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "",
+    "subtitle": [""],
+    "color": "#122b39E6",
+    "subtitleColor": "#676A86",
+    "anchor": "start",
+    "dx": 24,
+    "fontSize": 14,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 4,
+    "offset": 10
+  },
+  "width": 650,
+  "height": 400,
+  "config": {
+    "font": "Times New Roman",
+    "mark": {"line": {"interpolate": "linear"}},
+    "view": {"stroke": "transparent", "width": 450, "height": 350},
+    "range": {
+      "category": [
+        "#701B45"
+      ]
+    },
+    "axisX": {
+      "labelColor": "#122b39",
+      "tickColor": "#122b39",
+      "domainColor": "#122b39",
+      "domainOpacity": 0.5,
+      "gridOpacity": 0,
+      "labelFont": "Times New Roman",
+      "labelAngle": 0,
+      "labelAlign": "center",
+      "labelFontSize": 14,
+      "labelPadding": 5,
+      "tickCount": 10,
+      "tickSize": 0,
+      "title": ""
+    }
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/residuals_UK.csv"
+  },
+  "layer": [
+    {
+      "encoding": {
+        "x": {
+          "field": "year",
+          "scale": {"padding": 0.1},
+          "type": "ordinal",
+          "title": ""
+        }
+      },
+      "layer": [
+        {
+          "layer": [
+            {
+              "mark": {"type": "bar", "opacity": 1},
+              "encoding": {
+                "y": {
+                  "field": "resid_y",
+                  "type": "quantitative",
+                  "title": "GDP per worker growth (residuals)",
+                  "axis": {
+                    "grid": false,
+                    "orient": "left",
+                    "titleColor": "#9A2760",
+                    "domainColor": "#9A2760",
+                    "labelColor": "#9A2760",
+                    "titleAngle": 0,
+                    "labelFontSize": 14,
+                    "titleFontSize": 14,
+                    "titleX": -15,
+                    "titleY": -10,
+                    "titleAnchor": "start",
+                    "labelExpr": "datum.value+' %'"
+                  },
+                  "stack": "zero",
+                  "scale": {"domain": [-3, 3]}
+                },
+                "color": {
+                  "field": "category",
+                  "type": "nominal",
+                  "scale": {"range": ["#9A2760"]},
+                  "legend": null  
+                }
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "center",
+                "baseline": "middle",
+                "fontSize": 14,
+                "dy": {"expr": "datum.resid_y > 0 ? -10 : 10"},
+                "color": "black",
+                "text": {"expr": "format(datum.resid_y, '.1f')+' %'"}
+              },
+              "encoding": {
+                "x": {"field": "year", "type": "ordinal"},
+                "y": {"field": "resid_y", "type": "quantitative"}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mark": {"type": "line", "color": "rgb(50, 90, 200)", "point": true},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "resid_x1",
+          "type": "quantitative",
+          "axis": {
+            "title": "Private credit by banks to GDP (residuals)",
+            "grid": false,
+            "domainColor": "rgb(50, 90, 200)",
+            "labelColor": "rgb(50, 90, 200)",
+            "titleColor": "rgb(50, 90, 200)",
+            "labelExpr": "datum.value+' %'",
+            "labelFontSize": 14,
+            "titleFontSize": 14,
+            "orient": "right",
+            "titleAngle": 0,
+            "titleX": -200,
+            "titleY": -10,
+            "titleAnchor": "start"
+          },
+          "scale": {"domain": [-100, 100]}
+        }
+      }
+    }
+  ],
+  "resolve": {"scale": {"y": "independent"}}
+}
