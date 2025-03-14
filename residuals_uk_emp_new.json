@@ -56,8 +56,8 @@
       "mark": {
         "type": "text",
         "dy": {"expr": "datum.resid_y > 0 ? -10 : 10"},
-        "fontSize": 16,
-        "text": {"expr": "'('+datum.year+')'"}
+        "fontSize": 14,
+        "text": {"expr": "'('+datum.year+'+5'+')'"}
       },
       "encoding": {
         "x": {"field": "resid_x2", "type": "ordinal"},
