@@ -1,0 +1,87 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "",
+    "subtitle": [""],
+    "color": "black",
+    "subtitleColor": "black",
+    "anchor": "start",
+    "dx": 24,
+    "fontSize": 14,
+    "subtitleFontSize": 12,
+    "subtitlePadding": 4,
+    "offset": 0
+  },
+  "config": {
+    "font": "Times New Roman",
+    "line": {"interpolate": "linear"},
+    "view": {
+      "stroke": "transparent",
+      "continuousWidth": 400,
+      "continuousHeight": 300
+    },
+    "range": {"category": ["#023E8A", "#00B4D8", "#0077B6"]}
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/Residuals_high_income.csv"
+  },
+  "transform": [
+    {"filter": "datum.resid_y != 0"},
+    {"filter": "datum.resid_x2 != 0"}
+  ],
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "resid_x2",
+          "type": "quantitative",
+          "title": "Private credit by banks to GDP (residuals)",
+          "axis": {"labelFontSize": 14, "titleFontSize": 14}
+        },
+        "y": {
+          "field": "resid_y",
+          "type": "quantitative",
+          "title": "GDP per worker growth (residuals)",
+          "axis": {"labelFontSize": 14, "titleFontSize": 14}
+        },
+        "color": {
+          "field": "post",
+          "type": "nominal",
+          "title": "Income groups",
+          "legend": {
+            "title": "Time period",
+            "labelExpr": "datum.value === '0' ? '1960-2009' : '2010-2024'",
+            "labelFontSize": 14,
+            "titleFontSize": 14
+          }
+        },
+        "tooltip": [
+          {"field": "countrycode", "type": "nominal", "title": "Country"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "resid_x2", "type": "quantitative", "title": "Residual X2"},
+          {"field": "resid_y", "type": "quantitative", "title": "Residual Y"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "circle", "opacity": 1, "color": "#f785be"},
+      "transform": [{"filter": "datum.countrycode == 'GBR'"}],
+      "encoding": {
+        "x": {"field": "resid_x2", "type": "quantitative"},
+        "y": {"field": "resid_y", "type": "quantitative"},
+        "text": {"value": "UK"}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#701B45", "strokeWidth": 3},
+      "transform": [{"loess": "resid_y", "on": "resid_x2", "bandwidth": 0.5}],
+      "encoding": {
+        "x": {"field": "resid_x2", "type": "quantitative"},
+        "y": {"field": "resid_y", "type": "quantitative"}
+      }
+    },
+  ],
+  "height": 400,
+  "width": 650
+}
