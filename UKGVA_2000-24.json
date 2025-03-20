@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "UK GVA by industry - 2000 (left) vs 2024 (right)",
-    "subtitle": ["% of total GVA and employment"],
+    "subtitle": ["% of total GVA"],
     "color": "#122b39E6",
     "subtitleColor": "#676A86",
     "anchor": "start",
