@@ -79,7 +79,6 @@
               "United Kingdom",
               "France",
               "Italy",
-              "Spain",
               "Germany",
               "Japan",
               "Canada",
@@ -122,7 +121,7 @@
         "align": "left",
         "dx": 5,
         "dy": {
-          "expr": "{\"Italy\": -3, \"United States\": 0, \"Canada\": 9, \"United Kingdom\": -9, \"Spain\": 15, \"France\": 0, \"Japan\": 4, \"Germany\": 3}[datum.Country]"
+          "expr": "{\"Italy\": -3, \"United States\": 0, \"Canada\": 9, \"United Kingdom\": -9, \"France\": 0, \"Japan\": 4, \"Germany\": 3}[datum.Country]"
         }
       },
       "transform": [{"filter": "year(datum.Year) == 2022"}],
@@ -135,7 +134,6 @@
               "United Kingdom",
               "France",
               "Italy",
-              "Spain",
               "Germany",
               "Japan",
               "Canada",
