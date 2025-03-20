@@ -87,10 +87,10 @@
               "condition": [
                 {
                   "test": "datum.Sector === 'Finance & insurance '",
-                  "value": "#001f3f"
+                  "value": "#9A2760"
                 }
               ],
-              "value": "rgb(169,192,222)"
+              "value": "#93B7BE"
             }
           }
         },
@@ -125,10 +125,10 @@
               "condition": [
                 {
                   "test": "datum.Sector === 'Finance & insurance '",
-                  "value": "#001f3f"
+                  "value": "#9A2760"
                 }
               ],
-              "value": "rgb(169,192,222)"
+              "value": "#93B7BE"
             }
           }
         },
