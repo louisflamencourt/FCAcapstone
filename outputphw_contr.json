@@ -130,7 +130,13 @@
         "dx": -15
       },
       "encoding": {
-        "y": {"field": "Industry", "type": "nominal", "sort": "-x"},
+        "y": {
+          "field": "Industry", 
+          "type": "nominal", 
+          "sort": "-x",
+          "axis": {
+            "labelColor": {"expr": "datum.value == 'Finance and Insurance' ? '#9A2760' : 'black'"}
+          },},
         "x": {"field": "Contribution", "type": "quantitative"},
         "opacity": {
           "condition": {
