@@ -1,3 +1,4 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
@@ -105,7 +106,7 @@
           "transform": [
             {
               "fold": ["Financial services TTC", "Professional services TTC"],
-              "as": ["category", "value"]
+              "as": ["Category", "value"]
             }
           ],
           "layer": [
@@ -130,7 +131,7 @@
                   "scale": {"domain": [0, 120]}
                 },
                 "color": {
-                  "field": "category",
+                  "field": "Category",
                   "type": "nominal",
                   "scale": {"range": ["#9A2760", "#93B7BE"]}
                 }
