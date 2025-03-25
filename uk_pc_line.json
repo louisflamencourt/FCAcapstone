@@ -1,0 +1,62 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "private credit to GDP, UK",
+  "description": "Private credit to GDP and by banks over time in the UK (non-missing values only)",
+  "width": 400,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/rmontielz/capstone/refs/heads/main/UK_data.csv"
+  },
+  "transform": [
+    {"filter": "datum.priv_cred_ratio != ''"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "color": "#701B45"},
+      "encoding": {
+        "x": {
+          "field": "year", 
+          "type": "temporal", 
+          "title": "",
+          "axis": {"labelFontSize": 14, "titleFontSize": 14, "grid": false}
+        },
+        "y": {
+          "field": "priv_cred_ratio",
+          "type": "quantitative",
+          "title": "Share of GDP (%)",
+          "axis": {"labelFontSize": 14, "titleFontSize": 14, "grid": true}
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -5,
+        "color": "#701B45",
+        "fontSize": 14,
+        "text": {"expr": "format((datum.priv_cred_ratio), '.1f') + ' %'"}
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "temporal"},
+        "y": {"field": "priv_cred_ratio", "type": "quantitative"},
+        "tooltip": [
+          {"field": "year", "type": "temporal", "title": "Year"},
+          {"field": "priv_cred_ratio", "type": "quantitative", "title": "Share of GDP (%)"}
+        ]
+      },
+      "transform": [{"filter": "datum.year == 1672531200000"}]
+    }
+  ],
+  "config": {
+    "font": "Times New Roman",
+    "line": {"interpolate": "linear"},
+    "view": {
+      "stroke": "transparent",
+      "continuousWidth": 400,
+      "continuousHeight": 300
+    },
+    "range": {"category": ["#701B45", "#701B45", "#701B45"]}
+  }
+}
