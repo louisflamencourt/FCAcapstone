@@ -43,7 +43,8 @@
           "field": "resid_y",
           "type": "quantitative",
           "title": "GDP per worker growth (residuals)",
-          "axis": {"labelFontSize": 14, "titleFontSize": 14}
+          "axis": {"labelFontSize": 14, "titleFontSize": 14},
+          "scale": {"domain": [-10, 18]}
         },
         "color": {
           "field": "post",
@@ -80,7 +81,7 @@
         "x": {"field": "resid_x2", "type": "quantitative"},
         "y": {"field": "resid_y", "type": "quantitative"}
       }
-    },
+    }
   ],
   "height": 400,
   "width": 650
