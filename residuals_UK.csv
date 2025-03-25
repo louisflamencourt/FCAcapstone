@@ -1,14 +1,14 @@
-﻿year,resid_y,resid_x1,resid_x2,post
-1960,-0.044116437,-45.202133,,0
-1965,-0.76308292,-47.582706,,0
-1970,-0.82170194,-45.071274,,0
-1977,-0.019309605,-49.0009,,0
-1980,0.7514953,-45.031883,,0
-1985,2.6802552,-5.5183907,,0
-1990,1.9131774,12.544514,-0.026822936,0
-1995,0.93471467,10.132691,0.003983054,0
-2000,0.22083274,31.498453,,0
-2005,-2.1460013,66.391991,0.006525962,0
-2010,-0.93035841,55.818268,0.007626114,1
-2015,-0.62956232,28.083103,0.008687806,1
-2020,-1.1463423,32.938271,,1
+year,countrycode,ctrycode,country,resid_y,resid_x1,resid_x2,income1,region,post
+1960,GBR,GBR,United Kingdom,.0041743582,-45.184185,,High income,Europe & Central Asia,0
+1965,GBR,GBR,United Kingdom,-.75658405,-47.584511,,High income,Europe & Central Asia,0
+1970,GBR,GBR,United Kingdom,-.88158548,-45.074421,,High income,Europe & Central Asia,0
+1975,GBR,GBR,United Kingdom,.00090626226,-49.098072,,High income,Europe & Central Asia,0
+1980,GBR,GBR,United Kingdom,.71256393,-45.018295,,High income,Europe & Central Asia,0
+1985,GBR,GBR,United Kingdom,2.5881796,-5.5222359,,High income,Europe & Central Asia,0
+1990,GBR,GBR,United Kingdom,1.7419108,12.536884,-.00019778337,High income,Europe & Central Asia,0
+1995,GBR,GBR,United Kingdom,1.0516821,10.129112,.0014483018,High income,Europe & Central Asia,0
+2000,GBR,GBR,United Kingdom,.23436643,31.465288,.0022594808,High income,Europe & Central Asia,0
+2005,GBR,GBR,United Kingdom,-2.1075492,66.408264,.00056718715,High income,Europe & Central Asia,0
+2010,GBR,GBR,United Kingdom,-.89956218,55.839996,-.001204182,High income,Europe & Central Asia,1
+2015,GBR,GBR,United Kingdom,-.60433251,28.122543,-.0020503323,High income,Europe & Central Asia,1
+2020,GBR,GBR,United Kingdom,-1.0841702,32.979637,-.00082267204,High income,Europe & Central Asia,1
