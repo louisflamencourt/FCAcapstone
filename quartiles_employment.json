@@ -18,10 +18,10 @@
   },
   "data": {
     "values": [
-      {"quartile": "Q1", "value": 2.545995},
-      {"quartile": "Q2", "value": 2.604772},
-      {"quartile": "Q3", "value": 2.914959},
-      {"quartile": "Q4", "value": 1.879433}
+      {"quartile": "Q1", "value": 2.15},
+      {"quartile": "Q2", "value": 1.83},
+      {"quartile": "Q3", "value": 1.63},
+      {"quartile": "Q4", "value": 1.90}
     ]
   },
   "layer": [
