@@ -17,23 +17,21 @@
     "range": {"category": ["#701B45"]}
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/residuals_UK.csv",
-    "format": {"type": "csv"}
+    "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/residuals_UK.csv"
   },
-  "transform": [{"filter": "datum.year >= 1990 && datum.year <= 2015 && datum.year != 2000"}],
   "layer": [
     {
       "mark": "bar",
       "encoding": {
         "x": {
-          "field": "resid_x2",
+          "field": "resid_x1",
           "type": "ordinal",
           "axis": {
-            "labelAngle": 0,
-            "title": "Financial share in total employment (residuals)",
+            "labelAngle": 0, 
+            "title": "Private credit by banks to GDP (residuals)", 
             "labelFontSize": 16,
             "titleFontSize": 16,
-            "labelExpr": "format(datum.value, '.4f')"
+            "labelExpr": "format(datum.value, '.1f')"
           }
         },
         "y": {
@@ -49,19 +47,18 @@
             "labelExpr": "datum.value + ' %'"
           }
         },
-        "color": {"field": "resid_x2", "type": "nominal", "legend": null}
+        "color": {"field": "resid_x1", "type": "nominal", "legend": null}
       }
     },
     {
       "mark": {
-        "type": "text",
+        "type": "text", 
         "dy": {"expr": "datum.resid_y > 0 ? -10 : 10"},
-        "fontSize": 16,
-        "text": {"expr": "datum.year"}
-      },
+        "fontSize": 16, 
+        "text": {"expr": "datum.year"}},
       "encoding": {
-        "x": {"field": "resid_x2", "type": "ordinal"},
-        "y": {"field": "resid_y", "type": "quantitative"}
+        "x": {"field": "resid_x1", "type": "ordinal"},
+        "y": {"field": "resid_y", "type": "quantitative"},
       }
     }
   ],
