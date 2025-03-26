@@ -19,16 +19,21 @@
   "data": {
     "url": "https://raw.githubusercontent.com/louisflamencourt/FCAcapstone/refs/heads/main/residuals_UK.csv"
   },
+  "transform": [
+    {
+      "filter": "datum.year >= 1990"
+    }
+  ],
   "layer": [
     {
       "mark": "bar",
       "encoding": {
         "x": {
-          "field": "resid_x1",
+          "field": "resid_x2",
           "type": "ordinal",
           "axis": {
             "labelAngle": 0, 
-            "title": "Private credit by banks to GDP (residuals)", 
+            "title": "Financial share in total employment (residuals)", 
             "labelFontSize": 16,
             "titleFontSize": 16,
             "labelExpr": "format(datum.value, '.1f')"
@@ -47,7 +52,7 @@
             "labelExpr": "datum.value + ' %'"
           }
         },
-        "color": {"field": "resid_x1", "type": "nominal", "legend": null}
+        "color": {"field": "resid_x2", "type": "nominal", "legend": null}
       }
     },
     {
@@ -57,7 +62,7 @@
         "fontSize": 16, 
         "text": {"expr": "datum.year"}},
       "encoding": {
-        "x": {"field": "resid_x1", "type": "ordinal"},
+        "x": {"field": "resid_x2", "type": "ordinal"},
         "y": {"field": "resid_y", "type": "quantitative"},
       }
     }
