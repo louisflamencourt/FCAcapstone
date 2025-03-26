@@ -36,7 +36,7 @@
         "x": {
           "field": "resid_x2",
           "type": "quantitative",
-          "title": "Private credit by banks to GDP (residuals)",
+          "title": "Financial share in total employment (residuals)",
           "axis": {"labelFontSize": 14, "titleFontSize": 14}
         },
         "y": {
